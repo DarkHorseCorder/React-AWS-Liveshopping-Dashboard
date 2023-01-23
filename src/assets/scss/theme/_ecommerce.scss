@@ -1,0 +1,502 @@
+/**=====================
+    29.  Ecommerce  CSS Start
+==========================**/
+
+/**====== Product Start ======**/
+.invoice-table {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.invoice {
+  .text-right {
+    input {
+      margin-top: 6px;
+    }
+  }
+}
+.toggle-data {
+  cursor: pointer;
+}
+.product-sidebar {
+  .filter-section {
+    .card {
+      .card-header {
+        padding: 16px 30px;
+        border-radius: 5px;
+        h6 {
+          position: relative;
+          .pull-right {
+            i {
+              position: absolute;
+              top: 4px;
+              left: 0;
+              font-size: 10px;
+              width: 100%;
+              height: 10px;
+              text-align: right;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.product-wrapper {
+  .product-sidebar {
+    .filter-section {
+      .card {
+        .left-filter {
+          z-index: 0;
+          opacity: 0;
+          visibility: hidden;
+          box-shadow: $card-box-shadow;
+          height: 0;
+          transition: 0.3s;
+          .card-body {
+            padding: 30px;
+          }
+          .product-filter {
+            .irs-with-grid {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .product-grid {
+    .product-wrapper-grid {
+      margin-left: 0;
+      transition: 0.3s;
+      .card {
+        overflow: hidden;
+      }
+    }
+  }
+  &.sidebaron {
+    .product-sidebar {
+      .filter-section {
+        .card {
+          .left-filter {
+            z-index: 1;
+            opacity: 1;
+            visibility: visible;
+            position: absolute;
+            width: 100%;
+            background-color: white;
+            top: 53px;
+            height: auto;
+          }
+        }
+      }
+    }
+    .product-grid {
+      .product-wrapper-grid {
+        margin-left: calc(25% + 9px);
+        min-height: 1130px;
+      }
+    }
+  }
+}
+.d-none-productlist {
+  display: none;
+  i {
+    font-size: 12px;
+  }
+}
+.product-wrapper-grid {
+  &.list-view {
+    .product-box {
+      display: flex;
+      align-items: center;
+      .product-img {
+        width: 20%;
+      }
+      .product-details {
+        text-align: left;
+      }
+    }
+  }
+}
+.small-slick {
+  .slick-list {
+    margin: 0 -5px;
+    .slick-track {
+      .slick-slide {
+        &.slick-active {
+          &.slick-current {
+            img {
+              border: 1px solid $primary-color;
+            }
+          }
+        }
+        > div {
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}
+.slider-product {
+  padding: 15px 0;
+  border-top: 1px solid $light-color;
+  border-bottom: 1px solid $light-color;
+  margin-bottom: 15px;
+}
+.products-total {
+  display: flex;
+  align-items: center;
+}
+.grid-options {
+  height: 33px;
+  margin-left: 10px;
+  ul {
+    li {
+      a {
+        position: relative;
+        .line-grid {
+          position: absolute;
+          width: 4px;
+          height: 15px;
+          top: 9px;
+        }
+        .line-grid-1 {
+          left: 12px;
+        }
+        .line-grid-2 {
+          left: 18px;
+        }
+        .line-grid-3 {
+          left: 36px;
+        }
+        .line-grid-4 {
+          left: 42px;
+        }
+        .line-grid-5 {
+          left: 48px;
+        }
+        .line-grid-6 {
+          left: 66px;
+        }
+        .line-grid-7 {
+          left: 72px;
+        }
+        .line-grid-8 {
+          left: 78px;
+        }
+        .line-grid-9 {
+          left: 84px;
+        }
+        .line-grid-10 {
+          left: 103px;
+        }
+        .line-grid-11 {
+          left: 109px;
+        }
+        .line-grid-12 {
+          left: 115px;
+        }
+        .line-grid-13 {
+          left: 121px;
+        }
+        .line-grid-14 {
+          left: 127px;
+        }
+        .line-grid-15 {
+          left: 133px;
+        }
+      }
+    }
+  }
+}
+.square-product-setting {
+  height: 36px;
+  vertical-align: middle;
+  a {
+    color: $theme-body-font-color;
+  }
+  .icon-grid {
+    padding: 7px;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    &::before {
+      display: none;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.product-filter {
+  .banner-product {
+    margin-top: 15px;
+  }
+  h6 {
+    margin-bottom: 15px;
+  }
+  .color-selector {
+    line-height: 0.9;
+    ul {
+      li {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #444;
+        border-radius: 100%;
+        cursor: pointer;
+        + li {
+          margin-left: 5px;
+        }
+        &.white {
+          background-color: $white;
+        }
+        &.gray {
+          background-color: $theme-body-sub-title-color;
+        }
+        &.black {
+          background-color: $black;
+        }
+        &.orange {
+          background-color: #ffb17a;
+        }
+        &.green {
+          background-color: #6fb866;
+        }
+        &.pink {
+          background-color: pink;
+        }
+        &.yellow {
+          background-color: #f2f896;
+        }
+        &.blue {
+          background-color: #63b4f2;
+        }
+        &.red {
+          background-color: #ff647f;
+        }
+      }
+    }
+  }
+  &.new-products {
+    margin-top: 20px;
+    button {
+      width: auto;
+    }
+  }
+}
+.select2-drpdwn-product {
+  .form-control {
+    border: none;
+    box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);
+    margin-bottom: 10px;
+    height: 36px;
+  }
+}
+.feature-products {
+  form {
+    .form-group {
+      position: relative;
+      input {
+        margin-bottom: 15px;
+        border: none;
+        box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);
+        height: 50px;
+      }
+      i {
+        position: absolute;
+        top: 17px;
+        right: 30px;
+        color: $dark-gray;
+      }
+    }
+  }
+}
+.product-box {
+  .product-details {
+    padding: 25px;
+    text-align: center;
+    h6 {
+      color: $theme-body-font-color;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    span {
+      color: $dark-gray;
+    }
+  }
+  .modal {
+    .modal-header {
+      .product-box {
+        .product-details {
+          padding: 25px 0;
+          h6 {
+            text-transform: capitalize;
+          }
+          .product-price {
+            font-size: 22px;
+            margin-bottom: 10px;
+          }
+          .product-view {
+            padding: 20px 0;
+            border-top: 1px dotted $semi-dark;
+            border-bottom: 1px dotted $semi-dark;
+          }
+          .product-size {
+            margin: 20px 0;
+            ul {
+              li {
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .product-qnty {
+    .input-group {
+      width: 35%;
+      margin-bottom: 20px;
+      .btn {
+        padding: 5px 12px;
+      }
+      .btn-primary {
+        background-color: $semi-dark !important;
+        border: 1px solid $semi-dark !important;
+      }
+    }
+  }
+  .product-img {
+    position: relative;
+    .product-hover {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(0);
+      transition: all 0.3s ease;
+      ul {
+        li {
+          display: inline-block;
+          box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.08);
+          padding: 9px 14px;
+          background-color: $white;
+          font-size: 18px;
+          border-radius: 100%;
+          line-height: 1.6;
+          height: 45px;
+          width: 45px;
+          margin: 0 3px;
+          .btn {
+            padding: 0;
+          }
+          &:hover {
+            background-color: $theme-body-font-color;
+            .btn,
+            i {
+              color: $white;
+            }
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+  &:hover {
+    .product-hover {
+      opacity: 1;
+      border-radius: 0%;
+      transform: scale(1);
+      transition: all 0.3s ease;
+    }
+  }
+}
+.product-page-main {
+  padding: 30px;
+  .owl-item {
+    .item {
+      border: 1px solid $light-color;
+      border-radius: 5px;
+    }
+    &.current {
+      .item {
+        border: 1px solid $primary-color;
+      }
+    }
+  }
+  .product-slider {
+    margin-bottom: 20px;
+  }
+}
+.product-page-details {
+  h4 {
+    color: $theme-body-font-color;
+    text-transform: uppercase;
+    font-size: 18px;
+  }
+  span {
+    padding-left: 15px;
+  }
+}
+.br-theme-fontawesome-stars {
+  .br-widget {
+    a,
+    a.br-selected:after,
+    a.br-active:after {
+      color: #ffa800 !important;
+      font: normal normal normal 14px/1 FontAwesome;
+    }
+  }
+}
+.product-price {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: $font-work-sans, $font-serif;
+  del {
+    color: $semi-dark;
+    padding-right: 20px;
+  }
+}
+.product-color {
+  li {
+    display: inline-block;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    margin: 0 2px;
+  }
+}
+.product-page-main {
+  p {
+    font-size: 15px;
+  }
+  .nav-link {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+/**====== Product  Ends ======**/
+
+.payment-opt {
+  li {
+    display: inline-block;
+    img {
+      height: 20px;
+      margin: 15px 15px 0 0;
+    }
+  }
+}
+
+/**=====================
+    29. Ecommerce  CSS End
+==========================**/

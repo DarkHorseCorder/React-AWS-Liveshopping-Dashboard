@@ -1,0 +1,95 @@
+/**=====================
+    49. breadcrumb CSS Start
+==========================**/
+.page-wrapper {
+  .page-body-wrapper {
+    .page-header {
+      padding-top: $page-header-padding;
+      padding-bottom: $page-header-padding;
+      .row {
+        align-items: center;
+        .main-header {
+          h2 {
+            color: $primary-color;
+            font-weight: 800;
+            span {
+              color: $black;
+              padding-left: 5px;
+            }
+          }
+          h6 {
+            display: $page-small-title-display;
+            text-transform: $page-small-title-text-transform;
+            color: $primary-color;
+            letter-spacing: $page-small-title-letter-spacing;
+            font-weight: $page-small-title-font-weight;
+          }
+        }
+        .breadcrumb-right {
+          .breadcrumb {
+            background-color: $transparent-color;
+            padding: 0;
+            margin-top: 5px;
+            margin-bottom: 0;
+            float: right;
+            li {
+              color: $primary-color;
+              letter-spacing: 0.5px;
+              i {
+                font-weight: 700;
+              }
+            }
+            > li {
+              &:nth-child(2) {
+                font-weight: 700;
+              }
+            }
+            > li {
+              &:nth-child(3) {
+                font-weight: 400;
+              }
+            }
+            .breadcrumb-item {
+              align-items: center;
+              a {
+                background-color: rgba($primary-color, 0.12);
+                padding: 4px 5px 2px 6px;
+                border-radius: 100%;
+                color: $primary-color;
+                font-size: 15px;
+              }
+              & + .breadcrumb-item {
+                &:before {
+                  color: $primary-color;
+                  content: $breadcrumb-content;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.breadcrumb-colored {
+  .breadcrumb-item {
+    &.active {
+      color: $white;
+      opacity: 0.7;
+      &.txt-dark {
+        &::before {
+          color: #6c757d;
+        }
+      }
+    }
+    + .breadcrumb-item {
+      &::before {
+        color: $white;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+/**=====================
+    49. breadcrumb CSS ends
+==========================**/

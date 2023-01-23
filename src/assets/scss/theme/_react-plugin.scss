@@ -1,0 +1,745 @@
+/**=====================
+      90. React-Plugin CSS Start
+==========================**/
+// slick
+.slick-page {
+  .slick-slider {
+    margin: -8px 0 20px;
+  }
+}
+.slick-slider {
+  margin: -7px 0 0;
+  .slick-dots {
+    li {
+      button {
+        &:before {
+          font-size: 12px;
+          color: $primary-color;
+        }
+      }
+      &.slick-active {
+        button {
+          &:before {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+// range slider
+.rangeslider-horizontal,
+.rangeslider-vertical {
+  .rangeslider__fill {
+    background-color: $primary-color !important;
+  }
+  .rangeslider__handle {
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.slider-vertical,
+.vertical-height {
+  .value {
+    text-align: center;
+  }
+}
+.rangeslider-vertical {
+  .rangeslider__labels {
+    margin: 0 0 0 32px !important;
+  }
+}
+.input-range__slider {
+  background: $primary-color;
+  border: 1px solid $primary-color;
+}
+.input-range__track--active {
+  background: $primary-color;
+}
+.input-range {
+  margin-bottom: 34px;
+}
+
+// dropzone
+.dzu-dropzone {
+  border: 2px dashed $primary-color !important;
+  background: rgba($primary-color, 0.2);
+  overflow: auto !important;
+  .dz-message {
+    .note {
+      background-color: $transparent-color;
+    }
+  }
+}
+.dzu-inputLabel {
+  color: $primary-color !important;
+  text-align: center;
+  margin-bottom: 0;
+}
+.dzu-previewContainer {
+  padding: 30px !important;
+}
+.dzu-inputLabelWithFiles {
+  margin-left: 30px !important;
+  background-color: $primary-color !important;
+  color: $white !important;
+}
+.dzu-submitButton {
+  background-color: $primary-color !important;
+  &:disabled {
+    background-color: #e6e6e6 !important;
+  }
+}
+// Image Cropper
+.input-cropper {
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  border-radius: 4px;
+  width: 500px;
+}
+.crop-portion {
+  margin-left: 30px;
+  margin-top: 30px;
+  vertical-align: baseline;
+}
+.cropper-view-box {
+  outline-color: $primary-color;
+  outline: 1px solid $primary-color;
+}
+.cropper-point {
+  background-color: $primary-color;
+}
+// sticky
+.note {
+  background-color: rgba($primary-color, 0.3);
+  &:nth-child(2n) {
+    background: rgba($secondary-color, 0.3);
+  }
+}
+.react-stickies-wrapper {
+  .close {
+    &:before,
+    &:after {
+      background: $transparent-color !important;
+    }
+  }
+  .react-grid-layout {
+    .react-grid-item {
+      &:nth-child(1n) {
+        .note {
+          background: lighten($primary-color, 35%) !important;
+        }
+      }
+      &:nth-child(2n) {
+        .note {
+          background: lighten($secondary-color, 35%) !important;
+        }
+      }
+      &:nth-child(3n) {
+        .note {
+          background: lighten($success-color, 50%) !important;
+        }
+      }
+      &:nth-child(4n) {
+        .note {
+          background: lighten($info-color, 30%) !important;
+        }
+      }
+      &:nth-child(5n) {
+        .note {
+          background: lighten($warning-color, 35%) !important;
+        }
+      }
+      &:nth-child(6n) {
+        .note {
+          background: lighten($danger-color, 25%) !important;
+        }
+      }
+    }
+  }
+}
+// sweetalert
+.lead {
+  margin-bottom: 5px;
+}
+.swal2-container {
+  .swal2-actions {
+    .swal2-styled {
+      font-size: 14px;
+    }
+  }
+}
+.swal2-styled {
+  &.swal2-confirm {
+    background-color: $primary-color !important;
+    &:focus {
+      box-shadow: 0 0 0 1px $white, 0 0 0 3px rgba($primary-color, 0.4);
+    }
+  }
+}
+.swal2-title {
+  font-size: 20px !important;
+}
+.swal2-progress-steps {
+  .swal2-progress-step,
+  .swal2-progress-step-line {
+    background: $primary-color !important;
+  }
+  .swal2-progress-step {
+    &.swal2-active-progress-step {
+      background: $primary-color !important;
+      ~ .swal2-progress-step,
+      ~ .swal2-progress-step-line {
+        background: rgba($primary-color, 0.2) !important;
+      }
+    }
+  }
+}
+// datetime picker
+.bootstrap-datetimepicker-widget {
+  tr {
+    th,
+    td {
+      &:active,
+      &.active {
+        background-color: $primary-color;
+      }
+      span {
+        &:active,
+        &.active {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+}
+// upload
+.fileContainer {
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  .uploadPictureContainer {
+    margin: 1% !important;
+  }
+  .chooseFileButton {
+    margin-top: 0 !important;
+  }
+}
+// daterange picker
+.daterangepicker {
+  td,
+  th {
+    &.available {
+      &:hover {
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+// to-do
+.todo {
+  .action-box {
+    &.large {
+      .icon {
+        .icon-trash,
+        .icon-check {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+  .todo-list-wrapper {
+    #todo-list {
+      li {
+        &.completed {
+          .task-container {
+            .task-label {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  @-webkit-keyframes taskHighlighter {
+    0% {
+      background: rgba($primary-color, 0.5);
+    }
+    100% {
+      background: $white;
+    }
+  }
+  @keyframes taskHighlighter {
+    0% {
+      background: rgba($primary-color, 0.5);
+    }
+    100% {
+      background: $white;
+    }
+  }
+}
+// clock
+.react-clock__face {
+  border: 1px solid $white !important;
+}
+.react-clock__mark__body,
+.react-clock__hand__body {
+  background-color: $white !important;
+}
+
+// scrollable page
+.scrollarea {
+  max-width: 800px;
+  max-height: 300px;
+  .scrollbar-container {
+    z-index: 7 !important;
+  }
+}
+
+//form wizard
+ol {
+  &.progtrckr {
+    list-style-type: none;
+    padding: 0;
+    li {
+      display: inline-block;
+      text-align: center;
+      line-height: 4.5rem;
+      cursor: pointer;
+      span {
+        padding: 0 1.5rem;
+      }
+      &.progtrckr-doing {
+        color: black;
+        border-bottom: 4px solid #cccccc;
+        &:before {
+          content: "\2022";
+          color: white;
+          background-color: #cccccc;
+          width: 1.2em;
+          line-height: 1.2em;
+          border-radius: 1.2em;
+        }
+        &:hover {
+          &:before {
+            color: #ff4500;
+          }
+        }
+      }
+      &.progtrckr-done {
+        color: black;
+        border-bottom: 4px solid #5cb85c;
+        &:before {
+          content: "\2713";
+          color: white;
+          background-color: #5cb85c;
+          width: 1.2em;
+          line-height: 1.2em;
+          border-radius: 1.2em;
+        }
+        &:hover {
+          &:before {
+            color: #333;
+          }
+        }
+      }
+      &:after {
+        content: "\00a0\00a0";
+      }
+      &:before {
+        position: relative;
+        bottom: -3.7rem;
+        float: left;
+        left: 50%;
+      }
+      &.progtrckr-todo {
+        &:before {
+          content: "\039F";
+          color: silver;
+          background-color: $transparent-color;
+          width: 1.2em;
+          line-height: 1.4em;
+        }
+        &:hover {
+          &:before {
+            color: #ff4500;
+          }
+        }
+      }
+    }
+  }
+}
+
+// calender
+.rbc-calendar {
+  height: 1000px !important;
+}
+
+#external-events {
+  position: absolute;
+  z-index: 2;
+
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  background: #eee;
+  overflow-y: scroll;
+}
+
+#external-events .fc-event {
+  margin: 1em 0;
+  cursor: move;
+}
+
+//   base-typeahead
+.rbt-token {
+  color: $primary-color !important;
+  background-color: rgba($primary-color, 0.1) !important;
+  .rbt-token-remove-button {
+    top: 0 !important;
+  }
+}
+.btn-toolbar {
+  margin-bottom: -8px !important;
+}
+.rbt-menu {
+  li {
+    a {
+      color: $theme-body-font-color;
+    }
+  }
+}
+// time-picker
+.time_picker_wrapper {
+  width: 44%;
+}
+.react_times_button {
+  .wrapper {
+    display: block;
+  }
+}
+.time_picker_wrapper2 {
+  display: flex;
+  .time_picker_container {
+    width: 44%;
+  }
+  .gap {
+    padding: 0 5px;
+  }
+}
+// toastr
+.Toastify__close-button {
+  font-weight: 400;
+}
+.Toastify__toast--success {
+  background: $success-color !important;
+}
+.Toastify__toast--info {
+  background: $info-color !important;
+}
+.Toastify__toast--warning {
+  background: $warning-color !important;
+}
+.Toastify__toast--error {
+  background: $danger-color !important;
+}
+// draggable card
+.kULngK {
+  padding: 0 !important;
+  .cytUYd {
+    display: flex;
+    .fiziMw {
+      width: 100%;
+      > div {
+        &:focus {
+          outline-color: $transparent-color;
+        }
+      }
+      .fAifAI,
+      .igzqQK {
+        max-width: 100%;
+        min-width: 100% !important;
+        &:focus {
+          outline-color: $transparent-color !important;
+        }
+      }
+      .fLiuit {
+        &:focus {
+          outline-color: $transparent-color !important;
+        }
+      }
+    }
+  }
+}
+.draggable-card {
+  .hbRaEE {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+//DragNDrop
+.ui-sortable {
+  .container {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: $primary-color;
+    div {
+      padding: 10px;
+      background-color: darken($primary-color, 5%);
+      transition: opacity 0.4s ease-in-out;
+      color: $white;
+    }
+    div {
+      cursor: move;
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &.ex-moved {
+      background-color: #e74c3c;
+    }
+    &.ex-over {
+      background-color: $primary-color;
+    }
+    &:nth-child(odd) {
+      background-color: $primary-color;
+    }
+  }
+}
+.gh-fork {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+.gu-mirror {
+  padding: 10px;
+  background-color: darken($primary-color, 5%);
+  transition: opacity 0.4s ease-in-out;
+  color: $white;
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+.gu-hide {
+  display: none !important;
+}
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+.wrapper {
+  display: table;
+}
+.gu-mirror {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+.handle {
+  padding: 0 5px;
+  margin-right: 5px;
+  background-color: darken($primary-color, 15%);
+  cursor: move;
+}
+// timeline
+.vertical-timeline {
+  &::before {
+    background: $light-color;
+  }
+  .vertical-timeline-element {
+    p {
+      font-size: 13px !important;
+    }
+    .vertical-timeline-element-icon {
+      color: $white;
+    }
+    &:first-child,
+    &:nth-child(7) {
+      .vertical-timeline-element-icon {
+        background-color: $primary-color;
+      }
+    }
+    &:nth-child(2) {
+      .vertical-timeline-element-icon {
+        background-color: $secondary-color;
+      }
+    }
+    &:nth-child(3),
+    &:last-child {
+      .vertical-timeline-element-icon {
+        background-color: $success-color;
+      }
+    }
+    &:nth-child(4) {
+      .vertical-timeline-element-icon {
+        background-color: $info-color;
+      }
+    }
+    &:nth-child(5) {
+      .vertical-timeline-element-icon {
+        background-color: $warning-color;
+      }
+    }
+    &:nth-child(6) {
+      .vertical-timeline-element-icon {
+        background-color: $danger-color;
+      }
+    }
+  }
+}
+.vertical-timeline-element-content {
+  box-shadow: 1px 1px 2px 1px rgba($black, 0.08);
+  background-color: $light;
+  audio {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .vertical-timeline-element-date {
+    font-size: 14px !important;
+  }
+  .vertical-timeline-element-content-arrow {
+    border-right: 7px solid $light-color;
+  }
+}
+.vertical-timeline--two-columns {
+  .vertical-timeline-element-content {
+    .vertical-timeline-element-date {
+      top: 10px !important;
+    }
+  }
+}
+.vertical-timeline--one-column {
+  &:before {
+    left: 28px !important;
+  }
+  .vertical-timeline-element-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .vertical-timeline-element-content {
+    margin-left: 100px;
+    img {
+      width: 500px;
+    }
+    .vertical-timeline-element-date {
+      float: none;
+      display: block;
+    }
+  }
+}
+// leafleft map
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 7 !important;
+}
+.leaflet-pane {
+  z-index: 1 !important;
+}
+// vector map
+.map-block {
+  svg {
+    g {
+      transform-origin: 0 0;
+    }
+  }
+}
+#gmap-simple {
+  svg {
+    path {
+      fill: $primary-color !important;
+    }
+  }
+}
+#usa {
+  svg {
+    path {
+      fill: $secondary-color !important;
+    }
+  }
+}
+#canada {
+  svg {
+    path {
+      fill: $success-color !important;
+    }
+  }
+}
+#asia {
+  svg {
+    path {
+      fill: $warning-color !important;
+    }
+  }
+}
+#europe {
+  svg {
+    path {
+      fill: $danger-color !important;
+    }
+  }
+}
+#america {
+  svg {
+    path {
+      fill: $dark-color !important;
+    }
+  }
+}
+.jvectormap-zoomin,
+.jvectormap-zoomout {
+  width: 20px;
+  height: 20px;
+}
+.jvectormap-zoomin {
+  bottom: 65px;
+}
+.jvectormap-zoomout {
+  bottom: 30px;
+}
+.jvectormap-zoomin,
+.jvectormap-zoomout,
+.jvectormap-goback {
+  position: absolute;
+  border-radius: 3px;
+  background: #292929;
+  padding: 5px;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: content-box;
+}
+// rating
+.rating {
+  align-items: center;
+  span {
+    .fa {
+      color: $primary-color;
+    }
+    span {
+      span {
+        color: $primary-color;
+      }
+    }
+  }
+}
+/**=====================
+      90. React-Plugin CSS Ends
+==========================**/

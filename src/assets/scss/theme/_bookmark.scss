@@ -1,0 +1,38 @@
+/**=====================
+    67. Bookmark CSS start
+==========================**/
+.Typeahead-menu {
+  .ProfileCard-avatar {
+    i {
+      color: black;
+    }
+  }
+  .ProfileCard-details {
+    display: block;
+    float: none;
+    .ProfileCard-realName {
+      display: block;
+      text-align: left;
+      a {
+        .fa {
+          font-size: 18px;
+          vertical-align: middle;
+          &.starred {
+            color: orange;
+          }
+        }
+      }
+      .realname {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 128px;
+        display: inline-block;
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+/**=====================
+    67. Bookmark CSS Ends
+==========================**/

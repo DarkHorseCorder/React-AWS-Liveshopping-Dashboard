@@ -1,0 +1,232 @@
+const AWS = require("aws-sdk");
+var dynamodb = new AWS.DynamoDB();
+const dynamo = new AWS.DynamoDB.DocumentClient();
+var s3 = new AWS.S3({apiVersion: '2006-03-01'});
+var ivs = new AWS.IVS({apiVersion: '2020-07-14'});
+
+exports.handler = async (event, context) => {
+  let body ={};
+  let customername = JSON.parse(event.body).customerName;
+  let statusCode = 200;
+  const headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Headers" : "Content-Type",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PUT,DELETE"
+  };
+
+  try {
+    switch (event.routeKey) {
+      case "DELETE /channel/{id}":
+        //Delete each channel
+        //get channel id from db by id
+        let data = await dynamo
+          .get({
+            TableName: "live-shopping-channel",
+            Key: {
+              id: event.pathParameters.id
+            }
+          }).promise();
+        if(data.Item){
+          let result;
+          //first, Delete associated s3 bucket 
+          ////before delete the content of the s3 bucket
+          
+          ////and then delete the s3 bucket
+          var bucket_params = {
+            Bucket: data.Item.s3_bucket
+           };
+          result = await s3.deleteBucket(bucket_params).promise();
+          if(!result){
+            body = "Error while delete s3 bucket";
+            break;
+          }
+          //second, stop the channel before delete channel
+          var channel_params = {
+            arn: data.Item.channel_arn
+          };
+          result = await ivs.stopStream(params).promise();
+          if(!result){
+            body = "Error while stop live channel";
+            break;
+          }
+          //third, delete the channel
+          result = await ivs.deleteChannel(channel_params).promise();
+          if(!result){
+            body = "Error while delete channel";
+            break;
+          }
+          //fiveth, delete the record configuration of channel
+          var recconf_params = {
+            arn: data.Item.rec_conf_arn
+          };
+          result = await ivs.deleteRecordingConfiguration(recconf_params).promise();
+          if(!result){
+            body = "Error while delete channel record configuration";
+            break;
+          }
+          //sixth, delete the video stream table
+          ////////
+        }
+        else{
+          body = "No match channel.";
+          // body = data;
+          break;
+        }
+      case "GET /channel/{id}":
+        //get detail of each channel by id
+        result = await dynamo
+          .get({
+            TableName: "live-shopping-channel",
+            Key: {
+              id: event.pathParameters.id
+            }
+          }).promise();
+        if(!result){
+          body = "There is no channel match";
+          break;
+        }
+        body = result;
+        break;
+      case "GET /channel":
+        //get all channel info from db
+        result = await dynamo.scan({ TableName: "live-shopping-channel" }).promise();
+        if(!result){
+          body = "There is no channels";
+          break;
+        }
+        body = result;
+        break;
+      case "PUT /channel":
+        //add new channel by super admin
+        
+        //first create the s3 bucket for auto-save the videos
+        var bucketname = "ivs-liveshopping-s3bucket-customer-" + customername;
+        var bucketParams = {
+          Bucket: bucketname, 
+          CreateBucketConfiguration: {
+          LocationConstraint: "eu-west-1"
+          }
+        };
+        body.createdbucket = await s3.createBucket(bucketParams).promise();
+        //second, create the video record configuration using bucketname
+        var params = {
+          destinationConfiguration: { /* required */
+            s3: {
+              bucketName: bucketname,
+            }
+          },
+          name: 'ivs-liveshopping-recconfiguration-customer-' + customername,
+          tags: {
+          },
+        };
+        if(body.createdbucket)
+        body.createdconfigration = await ivs.createRecordingConfiguration(params).promise();
+        for(var i= 0; i<3000; i++){
+          console.log("test",i);
+        }
+        //Delay until the createdconfiguration is active
+        if(body.createdconfigration){
+          do{
+            var cparams = {
+              arn: body.createdconfigration.recordingConfiguration.arn,
+            };
+            body.createdconfigration = await ivs.getRecordingConfiguration(cparams).promise();
+          }while(body.createdconfigration.recordingConfiguration.state != "ACTIVE");
+        }
+        //third, create the channel by recordingconfiguration
+        var channelname = "ivs-liveshopping-channel-customer-" + customername;
+        if(body.createdconfigration)
+        var channelparams = {
+          authorized: false,
+          latencyMode: "LOW",
+          name: channelname,
+          recordingConfigurationArn: body.createdconfigration.recordingConfiguration.arn,
+          tags: {
+            
+          },
+          type: "STANDARD"
+        };
+        body.createdchannel = await ivs.createChannel(channelparams).promise();
+        //save all info to the live-shopping-channel table
+        if(body.createdchannel)
+        await dynamo
+          .put({
+            TableName: "live-shopping-channel",
+            Item: {
+              id: customername,
+              s3_bucket: body.createdconfigration.recordingConfiguration.destinationConfiguration.s3.bucketName,
+              rec_conf_arn: body.createdconfigration.recordingConfiguration.arn,
+              channel_arn : body.createdchannel.channel.arn,
+              channel_name: body.createdchannel.channel.name,
+              channel_ingestserver : "rtmps://" + body.createdchannel.channel.ingestEndpoint + ":443/app/",
+              channel_islive : false,
+              channel_playbackURL : body.createdchannel.channel.playbackUrl,
+              streamkey_arn : body.createdchannel.streamKey.arn,
+              streamkey :body.createdchannel.streamKey.value,
+            }
+          })
+          .promise();
+        //create new video table for save video stream info
+        var videotable_name = "ivs-liveshopping-videotable-customer-" + customername;
+        var create_videotable_params = {
+          AttributeDefinitions: [
+            {
+              AttributeName: "id", 
+              AttributeType: "S"
+            }
+          ], 
+          KeySchema: [
+             {
+            AttributeName: "id", 
+            KeyType: "HASH"
+           }
+          ], 
+          ProvisionedThroughput: {
+           ReadCapacityUnits: 5, 
+           WriteCapacityUnits: 5
+          }, 
+          TableName: videotable_name
+         };
+         let create_table_result = await dynamodb.createTable(create_videotable_params).promise();
+         if(!create_table_result){
+           body = "Error while creating table for video";
+         }
+         body.createdvideotable = create_table_result;
+        break;
+      case "GET /channel/{id}/video":
+        //get video stream info from video table
+        let result = await dynamo.scan({ TableName: "live-shopping-channel" }).promise();
+        if(!result){
+          body = "There is no video channels";
+          break;
+        }
+        break;
+      case "GET /channel/{id}/video/{videoid}":
+        //
+        break;
+      case "PUT /channel/{id}/video/{videoid}":
+        //
+        break;
+      case "DELETE /channel/{id}/video/{videoid}":
+        //
+        break;
+      default:
+        throw new Error(`Unsupported route: "${event.routeKey}"`);
+    }
+  } catch (err) {
+    statusCode = 400;
+    body = err.message;
+  } finally {
+    body = JSON.stringify(body);
+  }
+
+  return {
+    headers,
+    statusCode,
+    // createdbucket,
+    // createdconfigration,
+    // configurationlist,
+    body,
+  };
+};

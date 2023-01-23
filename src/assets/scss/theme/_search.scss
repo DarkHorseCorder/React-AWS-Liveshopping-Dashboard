@@ -1,0 +1,82 @@
+/**=====================
+     43. Search CSS Start
+==========================**/
+.search-page {
+  .search-form {
+    input {
+      background-position: 99%;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .nav-link {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .border-tab-primary {
+    &.nav-tabs {
+      .nav-item {
+        .nav-link {
+          font-size: 14px;
+        }
+      }
+      .dropdown {
+        .btn-primary {
+          background-color: $transparent-color !important;
+          border-color: $transparent-color !important;
+          color: $dark-color;
+        }
+      }
+    }
+  }
+
+  .info-block {
+    + .info-block {
+      padding-top: 30px;
+      border-top: 1px solid $light-color;
+      margin-top: 30px;
+    }
+  }
+  .border-tab-primary.nav-tabs {
+    align-items: left;
+    justify-content: end;
+    .nav-item {
+      width: auto;
+    }
+  }
+  .search-links {
+    h6 {
+      margin-bottom: 0;
+    }
+  }
+  p {
+    text-transform: lowercase;
+    margin-bottom: 0;
+    color: $dark-gray;
+  }
+  ul.search-info {
+    li {
+      display: inline-block;
+      font-size: 12px;
+      line-height: 1;
+      color: #586082;
+      + li {
+        border-left: 1px solid lighten($dark-color, 50%);
+        padding-left: 8px;
+        margin-left: 8px;
+      }
+      i {
+        color: $warning-color;
+      }
+    }
+  }
+  #video-links {
+    .embed-responsive + .embed-responsive {
+      margin-top: 30px;
+    }
+  }
+}
+/**=====================
+    43. Search CSS Ends
+==========================**/

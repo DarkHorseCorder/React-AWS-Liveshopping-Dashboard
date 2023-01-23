@@ -1,0 +1,33 @@
+//form input settings
+$form-group-margin-bottom: 1.25em;
+$col-form-label-font-size: 14px;
+$form-control-font-size: 14px;
+$form-control-border-radious: 2px;
+$form-control-border-color: $light-gray;
+
+/**=====================
+   53. base_inputs CSS start
+==========================**/
+.base_inputs {
+  .form-group {
+    margin-bottom: $form-group-margin-bottom;
+    .col-form-label {
+      font-size: $col-form-label-font-size;
+    }
+    .form-control {
+      font-size: $form-control-font-size;
+      border-radius: $form-control-border-radious;
+      border: 1px solid $form-control-border-color;
+    }
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      box-shadow: none !important;
+      border: 1px solid $form-control-border-color !important;
+    }
+  }
+}
+/**=====================
+    53. base_inputs CSS ends
+==========================**/

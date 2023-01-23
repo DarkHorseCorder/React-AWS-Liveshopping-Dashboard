@@ -1,0 +1,53 @@
+/**=====================
+    27. Data-table CSS Start
+==========================**/
+.product-table {
+  th {
+    &:last-child {
+      min-width: 120px;
+    }
+  }
+  h6 {
+    font-weight: 600;
+    color: $dark-color;
+  }
+}
+.rdt_Table {
+  border: 1px solid rgba($black, 0.1);
+}
+.rdt_TableCol {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+.rdt_TableHeader {
+  height: auto;
+  line-height: unset;
+  background: $transparent-color;
+}
+.ezWsxJ {
+  background-color: rgba($primary-color, 0.05) !important;
+}
+
+.support-table {
+  .gOLUdK {
+    .jiOqgz {
+      .rdt_Table {
+        .rdt_TableBody {
+          .rdt_TableCell {
+            img {
+              border-radius: 100%;
+            }
+            &:nth-child(5) {
+              > div {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/**=====================
+     27. Data-table CSS Ends
+==========================**/

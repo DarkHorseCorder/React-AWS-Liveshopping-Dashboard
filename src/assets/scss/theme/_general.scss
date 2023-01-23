@@ -1,0 +1,372 @@
+/**=====================
+     01. General CSS Start
+==========================**/
+//Custom css Start
+body {
+  background-color: $body-bg-color;
+  font-size: $body-font-size;
+  overflow-x: hidden;
+  font-family: $font-nunito;
+  color: $theme-font-color;
+}
+ul {
+  padding-left: $ul-padding-left;
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-right: $ul-padding-right;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: $font-nunito;
+}
+* a {
+  color: $primary-color;
+}
+*.btn:focus {
+  box-shadow: $btn-focus-box-shadow !important;
+}
+p {
+  font-size: $paragraph-font-size;
+  line-height: $paragraph-line-height;
+  letter-spacing: $paragraph-letter-spacing;
+}
+code {
+  color: $code-tag-color !important;
+  background-color: $code-tag-bg-color;
+  padding: $code-tag-padding;
+  margin: $code-tag-margin;
+  font-size: 10.5px !important;
+  border-radius: $code-tag-border-radious;
+}
+blockquote {
+  border-left: $blockquote-border;
+  padding: $blockquote-padding;
+}
+blockquote {
+  &.text-center {
+    border: none;
+    padding: $blockquote-padding;
+  }
+}
+blockquote {
+  &.text-right {
+    border-left: none;
+    border-right: $blockquote-border;
+    padding: $blockquote-padding;
+  }
+}
+:focus {
+  outline-color: $all-focus-outline-color;
+}
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+svg {
+  vertical-align: baseline;
+}
+input {
+  &:focus {
+    outline-color: $transparent-color;
+  }
+}
+.media-widgets {
+  .media-body {
+    margin-bottom: 30px;
+  }
+}
+//Custom css End
+
+//Typography css start
+
+h1 {
+  font-size: 2.5em !important;
+}
+.h1 {
+  font-size: 2.5em;
+}
+.h2 {
+  font-size: 2rem;
+}
+.h3 {
+  font-size: 1.75rem;
+}
+.h4 {
+  font-size: 1.5rem;
+}
+.h5 {
+  font-size: 1.25rem;
+}
+.h6 {
+  font-size: 1rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  line-height: 1.2;
+}
+.lead {
+  font-size: 1.25rem;
+}
+.rounded-small {
+  border-radius: 35% !important;
+}
+.typography {
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    margin: 20px 0;
+    margin-top: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  small {
+    padding-left: $small-tag-padding;
+    color: $small-tag-color;
+  }
+}
+pre {
+  background-color: $pre-tag-bg-color;
+  padding: $pre-tag-padding;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+    color: $primary-color;
+  }
+}
+
+.display-1 {
+  font-size: 6rem !important;
+}
+.display-2 {
+  font-size: 5.5rem !important;
+}
+.display-3 {
+  font-size: 4.5rem !important;
+}
+.display-4 {
+  font-size: 3.5rem !important;
+}
+//Typography css end
+
+.owl-theme {
+  .owl-dots {
+    .owl-dot {
+      span {
+        background: lighten($primary-color, 20%);
+      }
+      &.active,
+      &:hover {
+        span {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+  .owl-nav {
+    &.disabled {
+      & + .owl-dots {
+        margin-bottom: -10px;
+        margin-top: 25px;
+      }
+    }
+  }
+}
+.my-gallery {
+  img {
+    border-radius: 15px !important;
+  }
+}
+// modal page
+.close {
+  font-size: 20px;
+  &:before,
+  &:after {
+    display: none;
+  }
+}
+.modal-dialog {
+  .modal-content {
+    .modal-body {
+      p {
+        a {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+// index page notify
+.alert-theme {
+  button {
+    top: 33px !important;
+    right: 35px !important;
+    color: $primary-color;
+  }
+  img {
+    margin-right: 10px;
+  }
+
+  span {
+    + span {
+      + span {
+        padding: 15px;
+        background-color: lighten($primary-color, 44%);
+        box-shadow: 2px 12px 20px -15px rgba($primary-color, 0.3);
+        border: 1px solid rgba($primary-color, 0.02);
+        border-radius: 15px;
+        color: rgba($primary-color, 0.5);
+        > strong {
+          color: rgba($primary-color, 0.9);
+          padding-right: 2px;
+        }
+      }
+    }
+  }
+}
+.alert-copy {
+  border: 1px solid $primary-color;
+  line-height: 1;
+  display: inline-block;
+  width: 300px;
+  color: $white;
+  background-color: $primary-color;
+  box-shadow: 3px 3px 5px 0 #9b9b9b;
+  .close {
+    box-shadow: none;
+    color: $white;
+    line-height: 1.4;
+    font-weight: 100;
+  }
+}
+
+.ace-editor {
+  height: 400px;
+  width: 100%;
+}
+.editor-toolbar {
+  width: 100% !important;
+}
+
+// contact
+.contact-profile-form {
+  padding-bottom: 30px;
+  max-width: 582px;
+  margin: 0 auto;
+}
+.contact-search {
+  .form-group {
+    width: 100%;
+    &:before {
+      left: 50px !important;
+      top: 6px !important;
+    }
+    &:after {
+      left: 20px !important;
+      top: 9px !important;
+    }
+  }
+}
+.contact-filter {
+  display: flex;
+  align-items: center;
+  .input-range,
+  h5 {
+    margin-top: -15px;
+  }
+  h5 {
+    width: 224px;
+  }
+}
+.contact-table {
+  table {
+    th,
+    td {
+      border-top: none;
+      padding: 30px;
+      vertical-align: middle;
+    }
+    tr {
+      td {
+        border-bottom: 1px solid $light-semi-gray;
+        h6 {
+          margin-bottom: 0;
+        }
+        .btn-primary {
+          color: $white;
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+      &:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+.change-img-button {
+  margin: 0 auto;
+}
+.contact-profile {
+  position: relative;
+  .icon-wrapper {
+    position: absolute;
+    top: 73%;
+    left: 51%;
+    padding: 10px;
+    background-color: $white;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+}
+.upload {
+  position: absolute;
+  width: 36px;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  top: 0;
+  height: 36px;
+}
+
+.search-not-found {
+  align-items: center;
+  justify-content: center;
+  height: 631px;
+  display: flex;
+  .second-search {
+    width: 200px;
+  }
+}
+/**=====================
+      01. General CSS Ends
+==========================**/

@@ -1,0 +1,184 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Poco Admin
+    Template URI: themes.pixelstrap.com/Poco
+    Description: This is Admin theme
+    Author: Pixelstrap
+    Author URI: https://themeforest.net/user/pixelstrap
+
+-----------------------------------------------------------------------------------
+
+01. General CSS
+  02. Generic CSS
+  03. Card CSS
+  04. Loader CSS
+  05. Header CSS
+  06. Button CSS
+  07. Color CSS
+  08. GRID CSS
+  09. Error-page  CSS
+  10. Icon css
+   11. Email Application  CSS
+   12. Chat CSS
+   13. Alert CSS
+   14. Popover CSS
+   15. List CSS
+   16. Mega option CSS
+   17. Touchspin  CSS
+   18. Select 2 CSS
+   19. User profile css
+   20. Progress CSS
+	21. According CSS
+	22. Authentication CSS
+	23. Form CSS
+	24. Coming Soon CSS
+	25. Radio CSS
+	26. Form Input CSS
+	27. Data-table CSS
+	28. Pagination CSS
+	29. Ecommerce  CSS
+	30. Pricing CSS
+	 31. NAV CSS
+	 32. Dropdown CSS
+	 33. Table  CSS
+	 34. Chart CSS
+	 35. Timeline CSS
+	 36. Timeline 2 CSS
+	 37. Tabs CSS
+	 38. Gallery CSS
+	 39. Blog CSS
+	 40. Footer CSS
+	  41. Form Wizard
+	  42. Badge CSS
+	  43. Search CSS
+	  44. Datepicker CSS
+	  45. Dashboard CSS
+	  46. Tour  CSS
+	  47. theme layout CSS
+	  48. Ribbon CSS
+	  49. breadcrumb CSS
+	  50. Steps  CSS
+	   51. Customizer CSS
+	   52. RTL CSS
+	   53. base_inputs CSS
+	   54. Responsive css
+	   55. Box-layout css
+	   56. FullCalendar CSS
+	   57. Dashboard Ecommerce
+	   58. Dashboard Crypto
+	   59. Faq CSS
+	   60. Job CSS
+	    61. knowledgebase CSS
+	    62. Learning CSS
+	    63. Order History css
+	    64. Sidebar CSS
+	    65. social app
+	    66. avatars
+	    67. Bookmark
+ */
+
+ @import "theme/variables";
+ $primary-color: #3949ab;
+$secondary-color: #4fc3f7;
+$gradient-primary: linear-gradient(
+	to bottom right,
+	lighten($primary-color, 8%),
+	darken($primary-color, 5%)
+);
+$gradient-secondary: linear-gradient(
+	to bottom right,
+	lighten($secondary-color, 8%),
+	darken($secondary-color, 8%)
+);
+$gradient-primary-direction: linear-gradient(
+	to right,
+	lighten($primary-color, 8%),
+	darken($primary-color, 5%)
+);
+$gradient-secondary-direction: linear-gradient(
+	to right,
+	lighten($secondary-color, 8%),
+	darken($secondary-color, 8%)
+);
+$ancher-color: $primary-color;
+$all-focus-outline-color: $primary-color;
+$code-tag-color: $primary-color;
+$pre-tag-bg-color: rgba($primary-color, 0.03);
+$list-group-active-bg-color: $primary-color;
+$list-group-active-border-color: $primary-color;
+$common-shadow-color: $primary-color;
+$tour-color: $primary-color;
+$sidebar-shadow: 0 16px 15px 15px rgba($primary-color, 0.03);
+$sidebar-hover-txt-color: $primary-color;
+$common-box-shadow: 2px 3.464px 8px 0px rgba($primary-color, 0.18);
+$main-header-right-nav-icon-color: $primary-color;
+ @import "theme/general";
+ @import "theme/generic";
+ @import "theme/card";
+ @import "theme/loader";
+ @import "theme/header";
+ @import "theme/sidebar";
+ @import "theme/buttons";
+ @import "theme/color";
+ @import "theme/grid";
+ @import "theme/errorpage";
+ @import "theme/icons";
+ @import "theme/email-application";
+ @import "theme/chat";
+ @import "theme/alert";
+ @import "theme/list";
+ @import "theme/megaoption";
+ @import "theme/select2";
+ @import "theme/user-profile";
+ @import "theme/progress";
+ @import "theme/according";
+ @import "theme/login";
+ @import "theme/forms";
+ @import "theme/comingsoon";
+ @import "theme/radio";
+ @import "theme/form-input";
+ @import "theme/datatable";
+ @import "theme/page";
+ @import "theme/ecommerce";
+ @import "theme/pricing";
+ @import "theme/navs";
+ @import "theme/dropdown";
+ @import "theme/table";
+ @import "theme/chart";
+ @import "theme/timeline-v";
+ @import "theme/timeliny";
+ @import "theme/tab";
+ @import "theme/gallery";
+ @import "theme/blog";
+ @import "theme/footer";
+ @import "theme/form-wizard";
+ @import "theme/badge";
+ @import "theme/search";
+ @import "theme/datepicker";
+ @import "theme/tour";
+ @import "theme/custom-theme-options";
+ @import "theme/ribbon";
+ @import "theme/breadcrumb";
+ @import "theme/steps";
+ @import "theme/theme-customizer";
+ @import "theme/faq";
+ @import "theme/knowledgebase";
+ @import "theme/job-search";
+ @import "theme/learning";
+ @import "theme/order-history";
+ @import "theme/social-app";
+ @import "theme/photoswipe";
+ @import "theme/avatars";
+ @import "theme/bookmark";
+ @import "theme/typeahead-search";
+ @import "theme/cart";
+ @import "theme/checkout";
+ @import "theme/calendar";
+ @import "theme/dashboard_default";
+ @import "theme/dashboard_crypto";
+ @import "theme/dashboard_ecommerce";
+ @import "theme/react-plugin";
+ @import "theme/box-layout";
+ @import "theme/rtl";
+ @import "theme/responsive";
+ 

@@ -1,0 +1,34 @@
+/**=====================
+     18. Select 2 CSS Start
+==========================**/
+.add-post {
+  form {
+    .m-checkbox-inline {
+      label {
+        margin-bottom: 0;
+      }
+    }
+    textarea {
+      width: 100%;
+      border-radius: 15px;
+      border-color: #efefef;
+    }
+    .form-group {
+      margin-bottom: 30px;
+      .form-control {
+        border: 1px solid $light-semi-gray;
+        border-radius: 15px;
+      }
+      .col-form-label {
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+    }
+  }
+  .dropzone {
+    margin-bottom: 30px;
+  }
+}
+/**=====================
+     18. Select 2 CSS Ends
+==========================**/

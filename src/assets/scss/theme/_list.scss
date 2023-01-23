@@ -1,0 +1,63 @@
+/**=====================
+     15. List CSS Start
+==========================**/
+.list-group-item.active {
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+.list-group {
+  i {
+    margin-right: $list-group-margin;
+  }
+  img {
+    height: 40px;
+    width: 40px;
+    margin-right: $list-group-margin;
+  }
+  .list-group-item {
+    border: 1px solid rgba($black, 0.125);
+    + .list-group-item {
+      border-top: none !important;
+    }
+  }
+}
+.list-group-item-action {
+  color: #495057;
+  &.active {
+    color: $white;
+  }
+}
+.list-group-flush {
+  .list-group-item {
+    border-right: 0;
+    border-left: 0;
+  }
+}
+
+.tab-javascript {
+  ul {
+    &.list-group {
+      .list-group-item {
+        border-radius: 0;
+        border-top: none !important;
+        cursor: pointer;
+      }
+      &:first-child {
+        .list-group-item {
+          border-top: 1px solid rgba($black, 0.125);
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
+      }
+      &:last-child {
+        .list-group-item {
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+      }
+    }
+  }
+}
+/**=====================
+     15. List CSS Ends
+==========================**/

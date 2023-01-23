@@ -1,0 +1,263 @@
+/**=====================
+    44. Datepicker CSS Start
+==========================**/
+
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 14px rgba($primary-color, 0.15);
+  .react-calendar__tile--now {
+    border: 2px solid $primary-color;
+    background: $transparent-color;
+  }
+  .react-calendar__navigation {
+    button {
+      font-weight: 600;
+      &:hover,
+      &:focus,
+      &:active {
+        background: $transparent-color;
+      }
+    }
+  }
+  .react-calendar__viewContainer {
+    .react-calendar__month-view {
+      .react-calendar__month-view__weekdays {
+        .react-calendar__month-view__weekdays__weekday {
+          abbr {
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .react-calendar__tile {
+      padding: 10px;
+      border-radius: 5px;
+      &:enabled {
+        &:hover,
+        &:focus {
+          background-color: $primary-color;
+          color: $white;
+        }
+      }
+    }
+    .react-calendar__tile--active {
+      background-color: $primary-color;
+    }
+  }
+}
+.react-datepicker-popper {
+  z-index: 2 !important;
+}
+.react-datepicker-wrapper {
+  display: block !important;
+}
+.date-picker {
+  .theme-form {
+    .input-group {
+      display: block !important;
+    }
+    .min-date {
+      .react-datepicker-wrapper {
+        display: inline-block !important;
+      }
+    }
+  }
+}
+.react-datepicker {
+  border: none !important;
+  box-shadow: 0 4px 24px rgba($primary-color, 0.08);
+  .react-datepicker__time-container {
+    border-left: 1px solid #efefef;
+    .react-datepicker__time {
+      .react-datepicker__time-box {
+        ul {
+          &.react-datepicker__time-list {
+            li {
+              &.react-datepicker__time-list-item--selected {
+                background-color: $primary-color !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .react-datepicker__today-button {
+    background-color: $white !important;
+    border-top: 1px solid #efefef;
+  }
+  .react-datepicker__triangle {
+    display: none;
+  }
+  .react-datepicker__header {
+    background-color: $transparent-color !important;
+    border-bottom: 1px solid #efefef;
+  }
+  .react-datepicker__day-name {
+    font-weight: 600;
+  }
+  .react-datepicker__current-month {
+    margin-bottom: 10px;
+  }
+  .react-datepicker__current-month,
+  .react-datepicker-time__header,
+  .react-datepicker-year-header {
+    color: $primary-color !important;
+  }
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    width: 30px !important;
+    line-height: 30px !important;
+  }
+  .react-datepicker__navigation--next {
+    border-left-color: $primary-color !important;
+  }
+  .react-datepicker__navigation--previous {
+    border-right-color: $primary-color !important;
+  }
+  .react-datepicker__day--selected,
+  .react-datepicker__day--in-selecting-range,
+  .react-datepicker__day--in-range,
+  .react-datepicker__month-text--selected,
+  .react-datepicker__month-text--in-selecting-range,
+  .react-datepicker__month-text--in-range,
+  .react-datepicker__quarter-text--selected,
+  .react-datepicker__quarter-text--in-selecting-range,
+  .react-datepicker__quarter-text--in-range {
+    background-color: $primary-color !important;
+    &:hover {
+      background-color: $primary-color !important;
+    }
+  }
+  .react-datepicker__day--in-selecting-range,
+  .react-datepicker__month-text--in-selecting-range,
+  .react-datepicker__quarter-text--in-selecting-range {
+    background-color: rgba($primary-color, 0.15);
+  }
+  .react-datepicker__month--selecting-range {
+    .react-datepicker__day--in-range,
+    .react-datepicker__month-text--in-range {
+      color: $white !important;
+    }
+  }
+  .react-datepicker__quarter-text--in-range {
+    color: $white !important;
+  }
+  .react-datepicker__day--today,
+  .react-datepicker__day--selected {
+    background-color: $primary-color !important;
+    color: $white !important;
+    border-radius: 0.3rem;
+  }
+}
+// timepicker
+
+.classic_theme_container {
+  height: 144px !important;
+}
+.react_times_button {
+  .wrapper {
+    width: 100%;
+  }
+}
+.time_picker_wrapper2 {
+  display: flex;
+  width: auto !important;
+  .time_picker_container {
+    width: 300px;
+  }
+  .time_picker_modal_container {
+    top: unset !important;
+    bottom: 82px !important;
+  }
+}
+.time_picker_wrapper,
+.time_picker_wrapper2 {
+  width: 300px;
+  .time_picker_container {
+    .time_picker_modal_header,
+    .time_picker_modal_footer,
+    .timezone_picker_modal_header {
+      background-color: $primary-color;
+    }
+    .picker_pointer {
+      background-color: $primary-color;
+      .pointer_drag {
+        background-color: $primary-color;
+      }
+    }
+    .picker_center {
+      background-color: $primary-color;
+    }
+    .classic_theme_container {
+      .classic_time {
+        &.light {
+          &.active,
+          &:hover {
+            background-color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+  .gap {
+    padding: 10px;
+  }
+}
+.time_picker_modal_container {
+  width: unset !important;
+}
+// responsive
+@media only screen and (max-width: 1660px) {
+  .date-range {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 1107px) {
+  .date-range {
+    display: unset;
+    .react-datepicker-wrapper {
+      &:last-child {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 575px) {
+  .react-datepicker {
+    .react-datepicker__day-name,
+    .react-datepicker__day,
+    .react-datepicker__time-name {
+      width: 25px !important;
+      line-height: 25px !important;
+    }
+  }
+  .date-picker {
+    .theme-form {
+      .form-row {
+        .form-row {
+          .col-form-label {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 475px) {
+  .date-range {
+    .react-datepicker-wrapper {
+      &:last-child {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+/**=====================
+   44. Datepicker CSS End
+==========================**/

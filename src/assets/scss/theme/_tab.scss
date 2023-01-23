@@ -1,0 +1,195 @@
+/**=====================
+    37. Tabs CSS Start
+==========================**/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.tab-content {
+  .tab-pane {
+    &.active {
+      animation: fadeIn 0.5s ease-out;
+    }
+  }
+}
+.nav-pills {
+  .nav-link.active,
+  .show > .nav-link {
+    background-color: $primary-color;
+    border-radius: 15px;
+  }
+}
+.nav {
+  i {
+    margin-right: 10px;
+  }
+}
+
+$nav-name: theme, primary, secondary, success, danger, info, light, dark,
+  warning;
+$nav-color: $primary-color, $primary-color, $secondary-color, $success-color,
+  $danger-color, $info-color, $light-color, $dark-color, $warning-color;
+@each $var in $nav-name {
+  $i: index($label-name, $var);
+  .nav-#{$var},
+  .nav-pills.nav-#{$var} {
+    .nav-link {
+      color: nth($nav-color, $i);
+    }
+    .nav-link.active,
+    .show > .nav-link {
+      background-color: nth($nav-color, $i);
+      color: $white;
+    }
+  }
+}
+.nav-right {
+  justify-content: flex-end;
+}
+.nav-tabs.nav-bottom {
+  .nav-item {
+    .nav-link.active,
+    .nav-link.focus,
+    .nav-link.hover {
+      border-color: $white #dee2e6 #dee2e6;
+    }
+  }
+}
+.tab-content {
+  ~ .nav-tabs {
+    &.border-tab-primary {
+      margin-bottom: 0;
+      margin-top: 30px;
+    }
+  }
+}
+.nav-tabs {
+  .nav-link {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+}
+// Material style css
+.nav-primary,
+.nav-secondary {
+  &.nav-tabs {
+    margin-bottom: 30px;
+  }
+}
+.border-tab-primary.nav-tabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 30px;
+  .nav-item {
+    .nav-link {
+      font-size: 16px;
+      color: $dark-color;
+      text-align: center;
+      padding: 10px 25px;
+      border: none;
+      border-bottom: 2px solid $transparent-color !important;
+    }
+  }
+  .nav-link.active,
+  .nav-item.show,
+  .nav-link:focus,
+  .nav-link:hover {
+    color: $primary-color;
+  }
+  .nav-link {
+    &.active {
+      border-bottom: 2px solid $primary-color !important;
+    }
+  }
+}
+.border-tab-primary.nav-left {
+  .nav-link {
+    border-left: 2px solid transparent;
+    transition: all 0.3s ease;
+    color: $dark-color;
+  }
+  .nav-link.active,
+  .show > .nav-link {
+    background-color: transparent;
+    border-left-color: $primary-color;
+    color: $primary-color;
+    border-radius: 0;
+    transition: all 0.3s ease;
+  }
+}
+.border-tab-primary.nav-right {
+  .nav-link {
+    border-right: 2px solid transparent;
+    transition: all 0.3s ease;
+    color: $dark-color;
+    text-align: right;
+  }
+  .nav-link.active,
+  .show > .nav-link {
+    background-color: transparent;
+    border-right-color: $primary-color;
+    color: $primary-color;
+    border-radius: 0;
+    transition: all 0.3s ease;
+  }
+}
+@each $border-tab-name, $border-tab-color in (primary, $primary-color),
+  (secondary, $secondary-color), (success, $success-color),
+  (danger, $danger-color), (info, $info-color), (light, $light-color),
+  (dark, $dark-color), (warning, $warning-color)
+{
+  .borderb-tab-#{$border-tab-name} {
+    border-bottom: none;
+    top: 1px !important ;
+    &.nav-tabs {
+      .nav-item {
+        .nav-link {
+          font-size: 16px;
+          padding: 28px 15px;
+          border: none;
+          color: $theme-body-font-color;
+          border-bottom: 2px solid $transparent-color !important;
+        }
+      }
+      .nav-link.active,
+      .nav-item.show,
+      .nav-link:focus,
+      .nav-link:hover {
+        color: $border-tab-color;
+      }
+      .nav-link {
+        &.active {
+          border-bottom: 2px solid $border-tab-color !important;
+        }
+      }
+    }
+  }
+}
+.tabbed-card {
+  ul {
+    position: absolute;
+    right: 15px;
+    top: 43px;
+    &.border-tab-primary {
+      border-bottom: none;
+      &.nav-tabs {
+        top: 6px;
+        .nav-item {
+          float: right;
+          .nav-link {
+            padding: 44px 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**=====================
+     37. Tabs CSS Ends
+==========================**/
